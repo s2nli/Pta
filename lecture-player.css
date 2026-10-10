@@ -1,0 +1,42 @@
+/* Lecture tracking + player + recently watched (theme variables only) */
+.lp-check{flex:none;width:40px;height:40px;border-radius:50%;border:0;background:#2a2d40;color:#fff;display:grid;place-items:center;box-shadow:0 0 0 3px rgba(255,255,255,.06);cursor:pointer;transition:background .2s,box-shadow .2s,transform .15s;padding:0}
+.lp-check svg{width:20px;height:20px;opacity:.35;transition:opacity .2s}
+.lp-check:active{transform:scale(.92)}
+.lp-check.done{background:var(--mint,#22c55e);box-shadow:0 0 0 3px color-mix(in srgb,var(--mint,#22c55e) 35%,transparent)}
+.lp-check.done svg{opacity:1}
+.lp-row{display:flex;align-items:center;gap:12px;padding:14px;margin-bottom:10px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--panel);cursor:pointer;transition:transform .2s,border-color .2s}
+.lp-row:hover,.lp-row:focus-visible{transform:translateY(-2px);border-color:var(--brand-bright);outline:none}
+.lp-row.done .row-ico{background:color-mix(in srgb,var(--mint,#22c55e) 18%,transparent);color:var(--mint,#22c55e)}
+.lp-row.disabled{opacity:.55;cursor:not-allowed}
+.lp-extra{display:flex;flex-wrap:wrap;gap:8px;margin:-2px 0 12px 52px}
+.lp-prog{border:1px solid var(--line);border-radius:var(--radius-md);background:var(--panel);padding:12px 14px;margin-bottom:12px}
+.lp-prog-top{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:700;color:var(--text)}
+.lp-prog-pct{color:var(--brand-bright)}
+.lp-bar{height:6px;border-radius:99px;background:var(--panel-soft);overflow:hidden;margin-top:8px}
+.lp-bar>i{display:block;height:100%;width:0;border-radius:99px;background:var(--brand);transition:width .3s}
+.lp-prog.full .lp-bar>i{background:var(--mint,#22c55e)}
+.lp-prog.full .lp-prog-pct{color:var(--mint,#22c55e)}
+.lp-prog-card{margin:8px 12px 12px;padding:0;border:0;background:none}
+.lp-prog-card .lp-prog-top{font-size:11px;font-weight:600;color:var(--muted-bright)}
+/* player */
+.lp-ov{position:fixed;inset:0;z-index:100;background:var(--bg);display:flex;flex-direction:column}
+.lp-ov-top{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--panel-solid);border-bottom:1px solid var(--line)}
+.lp-ov-top b{flex:1;min-width:0;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lp-ov-x{width:36px;height:36px;border-radius:11px;border:1px solid var(--line);background:var(--panel-soft);color:var(--text);font-size:16px;cursor:pointer}
+.lp-ov video{flex:1;min-height:0;width:100%;background:#000}
+/* recently watched */
+.lp-rc{border:1px solid var(--line);border-radius:var(--radius-lg,20px);background:var(--panel-solid);padding:14px;margin-bottom:18px}
+.lp-rc-head{display:flex;align-items:center;gap:8px;margin-bottom:12px;color:var(--brand-bright)}
+.lp-rc-head svg{width:16px;height:16px;flex:none}
+.lp-rc-title{flex:1;font:700 12px/1 "Space Grotesk",sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.lp-rc-all{border:0;background:none;color:var(--muted-bright);font-size:12px;font-weight:700;cursor:pointer;padding:4px 6px}
+.lp-rc-x{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);background:var(--panel-soft);color:var(--muted-bright);cursor:pointer;line-height:1}
+.lp-rc-item{display:flex;gap:12px;width:100%;text-align:left;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--panel-soft);padding:10px;margin-bottom:8px;color:var(--text);cursor:pointer}
+.lp-rc-item:last-child{margin-bottom:0}
+.lp-rc-thumb{flex:none;width:104px;height:64px;border-radius:10px;object-fit:cover;background:var(--panel)}
+.lp-rc-info{flex:1;min-width:0;display:flex;flex-direction:column;gap:5px}
+.lp-rc-name{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font:600 13px/1.35 "Space Grotesk",sans-serif}
+.lp-rc-meta{display:flex;justify-content:space-between;gap:6px;font-size:11px;color:var(--muted)}
+.lp-rc-meta em{font-style:normal;color:var(--brand-bright);font-weight:700}
+.lp-rc-bar{height:4px;border-radius:99px;background:var(--panel);overflow:hidden;margin-top:auto}
+.lp-rc-bar>i{display:block;height:100%;background:var(--brand);border-radius:99px}
